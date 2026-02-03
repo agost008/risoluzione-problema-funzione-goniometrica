@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>TEORIA - RISOLUZIONE PROBLEMA FUNZIONE GONIOMETRICA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="nav-link">🏠 Home</a>
+        <a href="Teoria.html" class="nav-link active">📚 Teoria</a>
+        <a href="trig.html" class="nav-link">🔍 Problemi</a>
+    </nav>
+
+    <header class="hero">
+        <h1>📚 Teoria - Funzioni Goniometriche</h1>
+        <p class="authors">Valentin Dascalu & Anthony Diomaiuta</p>
+    </header>
+
+    <main class="container">
+        <section class="titoli">
+            <h1>📐 Funzioni Goniometriche</h1>
+        </section>
+        
+        <section class="card">
+            <h2>Seno</h2>
+            <p>
+                Il seno è una funzione goniometrica che indica l'ordinata di qualsiasi punto
+                sulla circonferenza goniometrica.
+            </p>
+            <img src="../img/seno.png" alt="seno" class="card-img">
+            <p>
+                Possiamo vedere come nei punti in cui l'angolo è 0° o 180° il seno è 0,
+                invece quando l'angolo è 90° il seno è 1 e quando è 270°, allora è -1.
+            </p>
+            <img src="../img/fseno.png" alt="fseno" class="card-img">
+            <p>
+                Nel grafico della funzione seno possiamo vedere come questa funzione è limitata 
+                nell'intervallo [-1,1], ma il suo dominio è ℝ.
+            </p>
+        </section>
+        
+        <section class="card">
+            <h2 id="coseno-section">Coseno</h2>
+            <p>
+                Il coseno è una funzione goniometrica che indica l'ascissa di qualsiasi punto
+                sulla circonferenza goniometrica.
+            </p>
+            <img src="../img/coseno.png" alt="coseno" class="card-img">
+            <p>
+                Possiamo vedere come nei punti in cui l'angolo è 90° o 270° il coseno è 0,
+                invece quando l'angolo è 0°/360° il coseno è 1 e quando è 180°, allora è -1.
+            </p>
+            <img src="../img/fcoseno.png" alt="fcoseno" class="card-img">
+            <p>
+                Nel grafico della funzione coseno possiamo vedere come questa funzione è limitata 
+                nell'intervallo [-1,1], ma il suo dominio è ℝ.
+            </p>	
+        </section>
+        
+        <section class="card">
+            <h2>Tangente</h2>
+            <p>
+                La tangente è la funzione goniometrica, ottenuta dal rapporto tra seno e coseno, 
+                che indica l'ordinata di intersezione tra il secondo lato dell'angolo e la retta tangente
+                alla circonferenza goniometrica nel punto A(1,0).
+            </p>
+            <img src="../img/tangente.png" alt="tangente" class="card-img" width="48%">
+            <p></p>
+            <img src="../img/ftangente.png" alt="ftangente" class="card-img" width="50%">
+            <p>
+                Nel grafico della funzione tangente possiamo notare come questa funzione non è limitata, però
+                il suo dominio non è ℝ, infatti nei punti π/2 e -π/2, per ogni periodo, non è definita.
+            </p>
+        </section>
+        
+        <section class="titoli">
+            <h1>📝 Equazioni Goniometriche</h1>
+        </section>
+        
+        <section class="card">
+            <h3>Equazione con il Seno</h3>
+            <p>
+                Per risolvere le equazioni goniometriche con il seno del tipo sin(x)=a bisogna
+                prima capire che questa equazione avrà sempre (tranne per sin(x)=π/2 e sin(x)=-π/2)
+                due soluzioni.
+                Le soluzioni sono x=arcsin(a)+2kπ e x=π-arcsin(a)+2kπ.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    3sin(x)=3/2<br>
+                    Per svolgere questa equazione, isoliamo sin(x), quindi dividiamo per 3
+                    in ambo i membri<br>
+                    sin(x)=1/2<br>
+                    Poi usiamo la formula vista prima e quindi le soluzioni saranno<br>
+                    <strong>x=π/6+2kπ e x=5π/6+2kπ</strong>
+                </div>
+            </section>
+            
+            <h3>Equazione con il Coseno</h3>
+            <p>
+                Per risolvere le equazioni goniometriche con il coseno del tipo cos(x)=a bisogna
+                prima capire che questa equazione avrà sempre (tranne per cos(x)=0 e cos(x)=π)
+                due soluzioni.
+                Le soluzioni sono x=±arccos(a)+2kπ.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    cos(x)=1/3<br>
+                    Poi usiamo la formula vista prima e quindi le soluzioni saranno<br>
+                    <strong>x=±arccos(1/3)+2kπ</strong>
+                </div>
+            </section>
+            
+            <h3>Equazione con la Tangente</h3>
+            <p>
+                Per risolvere le equazioni goniometriche con la tangente del tipo tan(x)=a bisogna
+                prima capire che questa equazione avrà sempre una soluzione.
+                Le soluzioni sono x=arctan(a)+kπ.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    3tan(x)=√3<br>
+                    Per svolgere questa equazione, isoliamo tan(x), quindi dividiamo per 3
+                    in ambo i membri<br>
+                    tan(x)=√3/3<br>
+                    Poi usiamo la formula vista prima e la soluzione sarà<br>
+                    <strong>x=π/6+kπ</strong>
+                </div>
+            </section>
+        </section>
+        
+        <section class="titoli">
+            <h1>⚖️ Disequazioni Goniometriche</h1>
+        </section>
+        
+        <section class="card">
+            <h3>Disequazione con il Seno</h3>
+            <p>
+                Per risolvere le disequazioni goniometriche con il seno del tipo sin(x)>a bisogna
+                prima risolvere l'equazione associata sin(x)=a e poi trovare gli intervalli dettati 
+                dalla disequazione.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    4sin(x)+2≥0<br>
+                    Per svolgere questa disequazione, prima risolviamo la sua equazione associata cioè
+                    4sin(x)+2=0<br>
+                    Semplificando, l'equazione ridà sin(x)=-1/2<br>
+                    Le soluzioni sono x=7π/6+2kπ e x=11π/6+2kπ<br>
+                    Dopo di questo osserviamo quali intervalli ci impone la disequazione
+                    sulla circonferenza goniometrica<br>
+                    <img src="../img/senodiseq.png" alt="senodiseq" class="card-img"><br>
+                    <strong>2kπ≤x≤7π/6+2kπ e 11π/6+2kπ≤x≤2π+2kπ</strong>
+                </div>
+            </section>
+            
+            <h3>Disequazione con il Coseno</h3>
+            <p>
+                Per risolvere le disequazioni goniometriche con il coseno del tipo cos(x)>a bisogna
+                prima risolvere l'equazione associata cos(x)=a e poi trovare gli intervalli dettati 
+                dalla disequazione.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    2cos(x)+1≤0<br>
+                    Per svolgere questa disequazione, prima risolviamo la sua equazione associata cioè
+                    2cos(x)+1=0<br>
+                    Semplificando, l'equazione ridà cos(x)=-1/2<br>
+                    Le soluzioni sono x=2π/3+2kπ e x=4π/3+2kπ<br>
+                    Dopo di questo osserviamo quali intervalli ci impone la disequazione
+                    sulla circonferenza goniometrica<br>
+                    <img src="../img/cosenodiseq.png" alt="cosenodiseq" class="card-img"><br>
+                    <strong>2π/3+2kπ≤x≤4π/3+2kπ</strong>
+                </div>
+            </section>
+            
+            <h3>Disequazione con la Tangente</h3>
+            <p>
+                Per risolvere le disequazioni goniometriche con la tangente del tipo tan(x)>a bisogna
+                prima risolvere l'equazione associata tan(x)=a e poi trovare gli intervalli dettati 
+                dalla disequazione.
+            </p>
+            <section class="esempi">
+                <div class="tit">Esempio</div>
+                <div>
+                    3tan(x)≤√3<br>
+                    Per svolgere questa disequazione, prima risolviamo la sua equazione associata cioè
+                    3tan(x)=√3<br>
+                    Semplificando, l'equazione ridà tan(x)=√3/3<br>
+                    La soluzione è x=π/6+kπ<br>
+                    Dopo di questo osserviamo quali intervalli ci impone la disequazione
+                    sulla circonferenza goniometrica<br>
+                    <img src="../img/tandiseq.png" alt="tandiseq" class="card-img"><br>
+                    <strong>-π/2+kπ≤x≤π/6+kπ</strong>
+                </div>
+            </section>
+        </section>
+
+        <a href="index.html" class="back-btn">← Torna alla Home</a>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Progetto Educativo. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>

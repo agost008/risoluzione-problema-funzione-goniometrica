@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio Trigonometrico | MathLab</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+<body>
+    <nav class="navbar" style="position: sticky; top: 0; z-index: 100;">
+        <a href="#" class="nav-link">🏠 Home</a>
+        <a href="Teoria.html" class="nav-link">📚 Teoria</a>
+        <a href="trig.html" class="nav-link active">🔍 Problemi</a>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1>📐 Esercizio Funzione goniometrica</h1>
+        </header>
+        
+        <!-- ESERCIZIO 1 -->
+        <section class="exercise-section" id="exercise-1">
+            <div class="exercise-num">1</div>
+            <div class="exercise-title">Data la funzione f(x) = a·cos(x - π/3) + 2, determina il valore di 'a'</div>
+            
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                In modo tale che il suo grafico passi per il punto P(-π/3, 4). 
+            </p>
+            
+            <div class="formula-box">
+                f(x) = a·cos(x - π/3) + 2
+            </div>
+            
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                Per trovare 'a', dobbiamo inserire le coordinate del punto P(-π/3, 4) nella funzione. 
+                Ciò significa che dobbiamo trovare il valore di x che ci dà f(x) = 4. 
+            </p>
+
+            <div class="input-group">
+                <label>🎯Qual è il valore di x che dobbiamo inserire per risolvere l'esercizio?   
+                    (Trascinare la risposta corretta nel riquadro)</label>
+                
+                <div style="margin: 30px 0;">
+                    <!-- Opzioni da trascinare -->
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin-bottom: 30px;">
+                        <div class="drag-option" draggable="true" data-value="-1.047">
+                            -π/3
+                        </div>
+                        <div class="drag-option" draggable="true" data-value="0">
+                            0
+                        </div>
+                        <div class="drag-option" draggable="true" data-value="1.047">
+                            π/3
+                        </div>
+                        <div class="drag-option" draggable="true" data-value="2.094">
+                            2π/3
+                        </div>
+                    </div>
+                    
+                    <!-- Riquadro destinazione -->
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 600; margin-bottom: 10px; color: #667eea;">Trascina qui:</label>
+                        <div id="dropZone" class="drop-zone">
+                            <p style="color: #aaa; font-size: 1.2rem;">📍 Rilascia il valore qui</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 15px; align-items: center; margin-top: 15px;">
+                    <button class="btn-check" onclick="checkX()">Verifica</button>
+                    <div id="feedbackX" style="flex: 1;"></div>
+                    <button id="proceedBtn" class="btn-continue" style="display: none; margin: 0; padding: 12px 25px; font-size: 1rem;" onclick="proceedWithExercise(1)">Procedi con l'esercizio</button>
+                </div>
+                <div id="explanationX" class="explanation-box"></div>
+            </div>
+            
+            <div class="step-explanation" id="xExplanation" style="display: none;">
+                <strong>📚 Spiegazione: Cosa rappresentano le coordinate?</strong><br><br>
+                Un punto P(x, y) nel piano cartesiano è definito da due coordinate:
+                <ul style="margin: 10px 0 0 20px; list-style: disc;">
+                    <li><strong>La prima coordinata (x)</strong> rappresenta il valore sulla <strong>asse orizzontale</strong> (ascissa)</li>
+                    <li><strong>La seconda coordinata (y)</strong> rappresenta il valore sulla <strong>asse verticale</strong> (ordinata)</li>
+                </ul>
+                <br>
+                Nel nostro caso, P(-π/3, 4) significa che il punto si trova a x = -π/3 sull'asse orizzontale 
+                e a y = 4 sull'asse verticale. Quindi quando inseriamo x = -π/3 nella funzione, 
+                deve darci f(-π/3) = 4.
+            </div>
+            
+            <div class="step-explanation" id="mathStepsExercise1" style="display: none;">
+                <strong>📐 Passaggi Matematici:</strong><br><br>
+                Sappiamo che f(-π/3) = 4:<br>
+                <br>
+                a·cos(-π/3 - π/3) + 2 = 4<br>
+                a·cos(-2π/3) + 2 = 4<br>
+                a·(-1/2) + 2 = 4<br>
+                -a/2 = 2<br>
+                <strong>a = -4</strong>
+            </div>
+            
+            <button class="btn-continue" id="continueBtn1" style="display: none;" onclick="continueToExercise(2)">✨ Continua all'Esercizio 2 →</button>
+        </section>
+        
+        <!-- ESERCIZIO 2 -->
+        <section class="exercise-section" id="exercise-2" style="display: none;">
+            <div class="exercise-num">2</div>
+            <div class="exercise-title">Traccia il grafico della funzione f(x) = -4·cos(x + (-π/3)) + 2</div>
+            
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                Che cos'è un grafico di una funzione e come interpretarlo? <br> 
+                Il grafico di una funzione è una rappresentazione visiva che mostra come i valori di x (input) si relazionano ai valori di f(x) (output).
+            </p>
+
+            <!-- PARAMETRO A: AMPIEZZA -->
+            <div class="step-explanation" style="background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); border-left: 5px solid #667eea;">
+                <h3 style="color: #667eea; margin-top: 0;">📈 Parametro 'a': L'Ampiezza</h3>
+                <p style="margin: 10px 0;">
+                    Il coefficiente <strong>a</strong> controlla l'<strong>ampiezza</strong> (o "altezza") dell'onda coseno. 
+                    Più alto è il valore assoluto di |a|, più "alta" diventa l'onda. 
+                    Se a è negativo, l'onda viene <strong>ribaltata</strong> (capovolto).
+                </p>
+                <p style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                    <strong style="color: #667eea;">📌 Dove appare:</strong> <code style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-family: monospace;">a·cos(x + b) + c</code><br>
+                    <strong>Parametro 'a'</strong> moltiplica il coseno:<br>
+                    <span style="background: #e0e0ff; padding: 4px 8px; border-radius: 4px;"><strong style="color: #667eea;">-4</strong>·cos(x + (-π/3)) + 2</span>
+                </p>
+                <p style="color: #666; font-style: italic;">Nella nostra funzione: <strong>a = -4</strong> significa che l'onda è capovolta e ha ampiezza 4.</p>
+            </div>
+
+            <p style="margin: 30px 0 20px 0; font-size: 1.05rem; font-weight: 600; color: #667eea;">Guarda come varia l'ampiezza:</p>
+            <iframe src="https://www.geogebra.org/classic/esaayn5p?embed" width="100%" height="600" style="max-width: 800px; margin: 0 auto; display: block;" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+            <!-- PARAMETRO B: TRASLAZIONE ORIZZONTALE -->
+            <div class="step-explanation" style="background: linear-gradient(135deg, #f093fb15 0%, #f5576c15 100%); border-left: 5px solid #f093fb; margin-top: 40px;">
+                <h3 style="color: #f093fb; margin-top: 0;">↔️ Parametro 'b': La Traslazione Orizzontale</h3>
+                <p style="margin: 10px 0;">
+                    Il valore <strong>b</strong> (nella funzione è "x + b") controlla lo <strong>spostamento orizzontale</strong> dell'onda.
+                </p>
+                <div style="margin: 15px 0; padding: 15px; background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 6px;">
+                    <strong style="color: #e65100;">💡 Perché con b > 0 la traslazione è verso SINISTRA?</strong><br><br>
+                    Nella funzione cos(x + b):
+                    <ul style="margin: 10px 0 0 20px; list-style: disc;">
+                        <li>Se <strong>b > 0</strong> (positivo): scriviamo cos(x + b), quindi il coseno avrà lo stesso valore quando <strong>x + b = 0</strong>, cioè quando <strong>x = -b</strong>. Si è spostato a <strong>SINISTRA</strong>.</li>
+                        <li>Se <strong>b < 0</strong> (negativo): scriviamo cos(x + (-|b|)) = cos(x - |b|), quindi il coseno avrà lo stesso valore quando <strong>x - |b| = 0</strong>, cioè quando <strong>x = |b|</strong>. Si è spostato a <strong>DESTRA</strong>.</li>
+                    </ul>
+                    <p style="margin-top: 10px; color: #666;"><strong>Ricorda:</strong> nell'argomento del coseno, il segno <strong>negativo</strong> davanti a |b| causa lo spostamento verso destra!</p>
+                </div>
+                <p style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                    <strong style="color: #f093fb;">📌 Dove appare:</strong> <code style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-family: monospace;">a·cos(x + b) + c</code><br>
+                    <strong>Parametro 'b'</strong> controlla la traslazione orizzontale:<br>
+                    <span style="background: #ffe0f0; padding: 4px 8px; border-radius: 4px;">-4·cos(x +<strong style="color: #f093fb;">(-π/3)</strong>) + 2</span> = -4·cos(x - π/3) + 2
+                </p>
+                <p style="color: #666; font-style: italic;">Nella nostra funzione: <strong>b = -π/3</strong> significa che il grafico è traslato di π/3 verso <strong>sinistra</strong>.</p>
+            </div>
+
+            <p style="margin: 30px 0 20px 0; font-size: 1.05rem; font-weight: 600; color: #f093fb;">Prova! Varia la traslazione e vedi come cambia:</p>
+            <iframe src="https://www.geogebra.org/classic/kfzu3guz?embed" width="100%" height="600" style="max-width: 800px; margin: 0 auto; display: block;" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+            <!-- PARAMETRO C: TRASLAZIONE VERTICALE -->
+            <div class="step-explanation" style="background: linear-gradient(135deg, #4facfe15 0%, #00f2fe15 100%); border-left: 5px solid #4facfe; margin-top: 40px;">
+                <h3 style="color: #4facfe; margin-top: 0;">↕️ Parametro 'c': La Traslazione Verticale</h3>
+                <p style="margin: 10px 0;">
+                    Il valore <strong>+c</strong> (aggiunto alla fine) controlla lo <strong>spostamento verticale</strong> dell'onda. 
+                    Se c > 0, la funzione si sposta <strong>verso l'alto</strong> di c unità.
+                    Se c < 0, la funzione si sposta <strong>verso il basso</strong> di |c| unità.
+                </p>
+                <p style="margin: 15px 0; padding: 15px; background: white; border-radius: 8px;">
+                    <strong style="color: #4facfe;">📌 Dove appare:</strong> <code style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-family: monospace;">a·cos(x + b) + c</code><br>
+                    <strong>Parametro 'c'</strong> aggiunto alla fine della funzione:<br>
+                    <span style="background: #e0f7ff; padding: 4px 8px; border-radius: 4px;">-4·cos(x + (-π/3)) + <strong style="color: #4facfe;">2</strong></span>
+                </p>
+                <p style="color: #666; font-style: italic;">Nella nostra funzione: <strong>c = 2</strong> significa che il grafico è traslato di 2 unità verso l'<strong>alto</strong>.</p>
+            </div>
+
+            <p style="margin: 30px 0 20px 0; font-size: 1.05rem; font-weight: 600; color: #4facfe;">Osserva la traslazione verticale:</p>
+            <iframe src="https://www.geogebra.org/classic/dw2scgwj?embed" width="100%" height="600" style="max-width: 800px; margin: 0 auto; display: block;" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+            <!-- SFIDA INTERATTIVA -->
+            <div style="background: linear-gradient(135deg, #84fab015 0%, #8fd3f415 100%); padding: 30px; border-radius: 10px; margin-top: 40px; border: 2px solid #84fab0;">
+                <h3 style="color: #2d5016; margin-top: 0; font-size: 1.3rem;">🎯 Sfida Finale: Ricostruisci la Funzione!</h3>
+                <p style="color: #555; margin-bottom: 25px;">
+                    Adesso che hai imparato come i parametri <strong>a</strong>, <strong>b</strong>, e <strong>c</strong> modificano il grafico, 
+                    prova a inserire i valori corretti per la funzione f(x) = a·cos(x + b) + c che passa per il punto P(-π/3, 4).
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+                    <div>
+                        <label style="display: block; font-weight: 600; color: #667eea; margin-bottom: 8px;">Valore di 'a' (Ampiezza):</label>
+                        <input type="text" id="inputA" placeholder="es: -1" style="width: 100%; padding: 10px; border: 2px solid #667eea; border-radius: 5px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; color: #f093fb; margin-bottom: 8px;">Valore di 'b' (Traslazione ↔️):</label>
+                        <input type="text" id="inputB" placeholder="es: pi/2" style="width: 100%; padding: 10px; border: 2px solid #f093fb; border-radius: 5px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; color: #4facfe; margin-bottom: 8px;">Valore di 'c' (Traslazione ↕️):</label>
+                        <input type="text" id="inputC" placeholder="es: 3" style="width: 100%; padding: 10px; border: 2px solid #4facfe; border-radius: 5px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <button class="btn-check" onclick="checkFunctionParameters()" style="width: 100%; padding: 15px; font-size: 1.1rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 20px;">
+                    ✨ Verifica i Parametri
+                </button>
+                <div id="feedbackParameters" style="margin-top: 15px;"></div>
+                <div id="complimentBox" style="display: none; margin-top: 20px; padding: 20px; background: #fff; border-radius: 10px; text-align: center; border: 3px solid #ffd700; animation: pulse 0.6s ease-in-out;">
+                    <h2 style="color: #ff6b6b; margin: 0 0 10px 0; font-size: 1.8rem;">🎉 Fantastico! 🎉</h2>
+                    <p style="color: #555; font-size: 1.1rem; margin: 10px 0;">
+                        Hai trovato tutti i parametri corretti! <strong style="color: #667eea;">a = -4, b = -π/3, c = 2</strong>
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin: 30px 0 20px 0; font-size: 1.05rem; font-weight: 600; color: #555;">Adesso è il tuo turno! Usa quello che hai imparato:</p>
+            <iframe src="https://www.geogebra.org/classic/hupppqz6?embed" width="100%" height="600" style="max-width: 800px; margin: 0 auto; display: block;" allowfullscreen style="border: 1px solid #e4e4e4;border-radius: 4px;" frameborder="0"></iframe>
+
+            <button class="btn-continue" onclick="continueToExercise(3)">✨ Continua all'Esercizio 3 →</button>
+        </section>   
+
+        <!-- ESERCIZIO 3 -->
+        <section class="exercise-section" id="exercise-3" style="display: none;">
+            <div class="exercise-num">3</div>
+            <div class="exercise-title">Determina gli zeri della funzione f(x) = -4·cos(x + (-π/3)) + 2</div>
+            
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                Gli zeri sono i punti dove il grafico si interseca o si incontra con l'asse x, cioè dove f(x) = 0. <br>
+                Ovvero, quei valori di x per cui la funzione assume il valore zero.
+            </p>
+            
+            <div class="step-explanation">
+                <strong>Passo 1: Impostare l'equazione</strong><br>
+                -4·cos(x - π/3) + 2 = 0
+            </div>
+            
+            <div class="step-explanation">
+                <strong>Passo 2: Isolare il coseno</strong><br>
+                -4·cos(x - π/3) = -2<br>
+                cos(x - π/3) = 1/2
+            </div>
+            
+            <div class="step-explanation">
+                <strong>Passo 3: Risolvere l'equazione trigonometrica</strong><br>
+                Gli angoli il cui coseno è 1/2 sono: π/3 e -π/3
+                <span style="cursor: pointer; font-size: 1.3rem; margin-left: 10px; display: inline-block; transition: all 0.3s ease;" onclick="toggleCosineExplanation()" id="lightbulb-icon">💡</span><br>
+                <div id="cosine-explanation" style="display: none; margin-top: 15px; padding: 15px; background: #fff3cd; border-left: 5px solid #ffc107; border-radius: 8px; animation: slideInLeft 0.4s ease;">
+                    <strong style="color: #856404;">💭 Spiegazione:</strong><br><br>
+                    Ricordi la circonferenza goniometrica? Il coseno rappresenta l'ascissa (coordinata x) di un punto sulla circonferenza.<br><br>
+                    <strong style="color: #667eea;">cos(π/3) = 1/2</strong> significa che l'angolo π/3 (60°) ha coseno 1/2<br>
+                    <strong style="color: #667eea;">cos(-π/3) = 1/2</strong> significa che l'angolo -π/3 (-60°) ha lo stesso coseno, perché il coseno è una funzione <strong>pari</strong>: cos(-x) = cos(x)<br><br>
+                    Puoi verificarlo sulla teoria! 👉 <a href="/teoria#coseno-section" style="color: #667eea; font-weight: bold; text-decoration: underline;">Vai alla teoria del coseno</a>
+                </div><br>
+                x - π/3 = π/3 + 2πk &nbsp;&nbsp; oppure &nbsp;&nbsp; x - π/3 = -π/3 + 2πk
+            </div>
+            
+            <div class="step-explanation">
+                <strong>Passo 4: Semplificare</strong><br>
+                x = 2π/3 + 2πk &nbsp;&nbsp; oppure &nbsp;&nbsp; x = 2πk<br>
+                <br>
+                <strong style="color: #667eea; font-size: 1.1rem;">x = 2πk &nbsp;&nbsp; oppure &nbsp;&nbsp; x = 2π/3 + 2πk &nbsp;&nbsp; (per k ∈ ℤ)</strong>
+            </div>
+            
+            <button class="btn-continue" onclick="continueToExercise(4)">✨ Continua all'Esercizio 4 →</button>
+        </section>
+        
+        <!-- ESERCIZIO 4 -->
+        <section class="exercise-section" id="exercise-4" style="display: none;">
+            <div class="exercise-num">4</div>
+            <div class="exercise-title">Dominio di y = √(2 - 4cos(x - π/3))</div>
+            
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">
+                Impara il concetto di dominio e scopri come visualizzarlo sul grafico.
+            </p>
+            
+            <!-- FLASHCARD -->
+            <h3 style="color: #667eea; margin-bottom: 20px;">📚 Concetti Chiave - Clicca per Scoprire</h3>
+            <div class="flashcard-container">
+                <div class="flashcard" onclick="toggleFlashcard(this)">    
+                        <h3>Cos'è il Dominio?</h3>
+                        <p style="font-size: 0.9rem; color: #667eea; margin-top: 20px;">Clicca per scoprire...</p>
+                    <div class="back">
+                        <p>Il dominio di una funzione è l'insieme di tutti i valori di <strong>x</strong> per cui la funzione è definita e ha un valore reale.</p>
+                    </div>
+                </div>
+                
+                <div class="flashcard" onclick="toggleFlashcard(this)">
+                        <h3>Perché ≥ 0?</h3>
+                        <p style="font-size: 0.9rem; color: #667eea; margin-top: 20px;">Clicca per scoprire...</p>                   
+                    <div class="back">
+                        <p>La radice quadrata di un numero negativo non esiste nei numeri reali. Quindi l'argomento della radice deve essere <strong>maggiore o uguale a zero</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step-explanation" style="margin-top: 30px;">
+                <strong>Analisi Matematica:</strong><br><br>
+                Richiesta: 2 - 4cos(x - π/3) ≥ 0<br>
+                <br>
+                -4·cos(x - π/3) ≥ -2<br>
+                <br>
+                cos(x - π/3) ≤ 1/2 (il segno si inverte dividendo per -4)
+            </div>
+            <p style="margin-bottom: 20px; color: #666; font-size: 1.1rem;">Visualizza graficamente il valore del Dominio <br>
+                Clicca sul grafico per conoscere i valori di x.
+            </p>
+            <iframe src="https://www.desmos.com/calculator/klqnylebja?embed" width="100%" height="500" style="max-width: 800px; margin: 0 auto; display: block; border: 1px solid #ccc" frameborder=0></iframe>
+            
+            <div class="step-explanation" style="margin-top: 30px;">
+                <strong>Intervalli del Dominio (per k ∈ ℤ):</strong><br><br>
+                <strong style="color: #667eea; font-size: 1.1rem;">x ∈ [2π/3 + 2πk, 2π + 2πk]</strong>
+            </div>
+        </section>
+        
+        <a href="index.html" class="back-btn">← Torna alla Home</a>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2026 Progetto Educativo. Tutti i diritti riservati.</p>
+    </footer>
+    
+    <script>
+        // Funzione per mostrare/nascondere esercizi
+        function continueToExercise(exerciseNumber) {
+            // Nascondi tutti gli esercizi
+            for (let i = 1; i <= 4; i++) {
+                const section = document.getElementById(`exercise-${i}`);
+                if (section) {
+                    section.style.display = 'none';
+                }
+            }
+            // Mostra l'esercizio richiesto
+            const nextSection = document.getElementById(`exercise-${exerciseNumber}`);
+            if (nextSection) {
+                nextSection.style.display = 'block';
+                nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Funzione per le flashcard
+        function toggleFlashcard(element) {
+            element.classList.toggle('flipped');
+        }
+    </script>
+    
+    <script src="../static/script.js"></script>
+</body>
+</html>

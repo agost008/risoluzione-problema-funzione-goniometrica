@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>RISOLUZIONE PROBLEMA FUNZIONE GONIOMETRICA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header class="hero">
+        <h1>🎓 Risoluzione problemi goniometrici</h1>
+        <p class="authors">Valentin Dascalu & Anthony Diomaiuta</p>
+    </header>
+
+    <main class="container home-container">
+        <section class="card home-card" id="card-teoria">
+            <div class="card-image-wrapper">
+                <img src="../img/teoria.png" alt="Parte teorica" class="card-image">
+                <div class="card-overlay">
+                    <a href="Teoria.html" class="btn-card">Vai alla Teoria</a>
+                </div>
+            </div>
+            <div class="titoli">
+                <h2>📚 La Parte Teorica</h2>
+                <p style="color: #f1f1f1;">La parte di teoria che svilupperemo in questa sezione sarà essenziale per lo sviluppo degli esercizi delle sezioni successive.</p>
+                <ul class="card-features">
+                    <li>✓ Funzioni goniometriche</li>
+                    <li>✓ Equazioni goniometriche</li>
+                    <li>✓ Disequazioni goniometriche</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card home-card" id="card-pratica">
+            <div class="card-image-wrapper">
+                <img src="../img/pratica.png" alt="Parte dei problemi" class="card-image">
+                <div class="card-overlay">
+                    <a href="trig.html" class="btn-card">Risolvi Problemi</a>
+                </div>
+            </div>
+            <div class="titoli">
+                <h2>🔍 I Problemi Pratici</h2>
+                <p style="color: #f1f1f1;">In questa sezione vedremo l'applicazione pratica delle nozioni di teoria della parte precedente con un problema di media difficoltà.</p>
+                <ul class="card-features">
+                    <li>✓ Esercizi interattivi</li>
+                    <li>✓ Grafici dinamici</li>
+                    <li>✓ Spiegazioni dettagliate</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <section class="info-section">
+        <h2>Cosa Impareremo</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="info-icon">📐</div>
+                <h3>Funzioni</h3>
+                <p>Comprendi seno, coseno e tangente</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">📊</div>
+                <h3>Grafici</h3>
+                <p>Visualizza le trasformazioni grafiche</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">✏️</div>
+                <h3>Esercizi</h3>
+                <p>Pratica con problemi interattivi</p>
+            </div>
+            <div class="info-card">
+                <div class="info-icon">🎯</div>
+                <h3>Soluzioni</h3>
+                <p>Ottieni feedback immediato</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2026 Progetto Educativo. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="../static/script.js"></script>
+    <script>
+        // Aggiungi effetto hover interattivo alle card
+        document.querySelectorAll('.home-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Animazione delle info card
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
+                }
+            });
+        });
+
+        document.querySelectorAll('.info-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+
+</body>
+</html>
